@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #8DFF69;
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+@layer base {
+ html {
+  font-family: var(--font-display);
+  scroll-behavior: smooth;
+ }
+
+ .bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #FFFFFF;
+  overflow-x: hidden;
+ }
+
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar{
+  width: 10px;
+ }
+
+ ::-webkit-scrollbar-track {
+  background: #0a0a0a;
+ }
+
+ ::-webkit-scrollbar-thumb {
+  background: linear-gradient(100deg, #8DFF69, #6FE047);
+  border-radius: 5px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(100deg, #A8FF8d, #5BC92E);
+ }
+
+ /* Firefox Scrollbar */ 
+ *{
+  scrollbar-width: thin;
+  scrollbar-color: #6FE047 #0a0a0a;
+ }
+
+ /* Hide Scrollbar for Carousel */
+ .hide-scrollbar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+ }
+
+ .hide-scrollbar::-webkit-scrollbar{
+  display: none;
+ }
+
+ /* Animation Keyframes */
+ @keyframes fadeIn {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ @keyframes pulse {
+  0%, 
+  100% {
+   opacity: 0.3;
+  }
+
+  50% {
+   opacity: 0.5;
+  }
+ }
+
+ /* Utility Classes */
+ .animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+ }
+
+ .animate-pulse {
+  animation: spin 8s linear infinite;
+ }
+
+ @keyframse spin {
+  from {
+   transform: rotate(0deg);
+  }
+
+  to {
+   transform: rotate(360deg); 
+  }
+ }
+
+ /* Line Clamp */
+ .line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+ }
+
+ .line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+ }
+}
+
+.container {
+  position: relative;
+  height: 70px;
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.tagline {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  color: hsl(0 0% 98% / 0.2); /* gray base */
+  --t: 100%;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: var(--tracking-wider);
+}
+
+.tagline::after {
+  content: attr(data-word);
+  position: absolute;
+  inset: 0;
+  color: white;
+  clip-path: inset(var(--t) 0 0 0);
+}

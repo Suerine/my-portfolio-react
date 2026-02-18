@@ -1,6 +1,6 @@
 export const PERSONAL_INFO = {
   name: "Suerine Otieno",
-  title: "Full Stack JS Developer & AI Automation Engineer",
+  title: "Full Stack Developer & AI Automation Engineer",
   email: "suerineogaja@gmail.com",
   location: "Nairobi, Kenya",
   tagline:

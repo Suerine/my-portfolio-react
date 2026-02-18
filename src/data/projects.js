@@ -1,11 +1,16 @@
+import SpendWiseImg from "../assets/images/projects/SpendWisePCDemo1.png";
+import GoFImg from "../assets/images/projects/GOFPhoneDemo.png";
+import RapsyreImg from "../assets/images/projects/RapSyreDemo.png";
+import DeskflowImg from "../assets/images/projects/DeskflowPCDemo.png";
+
 export const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
     description: "",
-    image: "",
+    image: GoFImg,
     category: "",
-    tachnolgies: ["React", "Node.js", "MongoDB", "Stripe"],
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     metrics: "40% increase in conversion",
     demoUrl: "",
     github: "",
@@ -15,9 +20,9 @@ export const projects = [
     title: "AI Email Assistant",
     description:
       "An intelligent email automation system that summarizes long threads, prioritizes inbox messages by urgency and tone, auto-replies to support emails, and extracts invoice attachments automatically.",
-    image: "",
+    image: RapsyreImg,
     category: "AI Automation",
-    tachnolgies: ["Node.js", "OpenAI API", "Gmail API", "MongoDB"],
+    technologies: ["Node.js", "OpenAI API", "Gmail API", "MongoDB"],
     metrics: "Reduced email handling time by 60%",
     demoUrl: "",
     github: "",
@@ -27,9 +32,9 @@ export const projects = [
     title: "DeskFlow – Productivity Automation App",
     description:
       "A desktop automation application that tracks active and idle time, detects inactivity (AFK), manages tasks, and improves workflow efficiency for students and remote professionals.",
-    image: "",
+    image: DeskflowImg,
     category: "Productivity Tool",
-    tachnolgies: [
+    technologies: [
       "Electron.js",
       "SQLite",
       "Node.js",
@@ -40,25 +45,25 @@ export const projects = [
     github: "",
   },
   {
-    id: 6,
+    id: 4,
     title: "Matatu Intelligence Engine",
     description:
       "A smart route reasoning engine that optimizes informal public transport navigation by suggesting the fastest matatu combinations between locations in Nairobi.",
     image: "",
     category: "Transport Tech",
-    tachnolgies: ["Node.js", "Graph Algorithms", "MongoDB", "REST APIs"],
+    technologies: ["Node.js", "Graph Algorithms", "MongoDB", "REST APIs"],
     metrics: "Improved route decision efficiency by 35%",
     demoUrl: "",
     github: "",
   },
   {
-    id: 9,
+    id: 5,
     title: "Personal Expense Tracker",
     description:
       "A full-stack expense tracking application that allows users to record transactions, categorize expenses, visualize spending patterns, and download financial reports for better budgeting decisions.",
-    image: "",
+    image: SpendWiseImg,
     category: "Finance Application",
-    tachnolgies: [
+    technologies: [
       "React",
       "Node.js",
       "Express",
@@ -68,7 +73,7 @@ export const projects = [
     metrics:
       "Helped users track and analyze 100% of daily spending in real-time",
     demoUrl: "",
-    github: "",
+    githubUrl: "https://github.com/Suerine/ExpenseTracker",
   },
 ];
 

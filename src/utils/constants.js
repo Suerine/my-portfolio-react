@@ -14,9 +14,8 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
-  twitter: "https://twitter.com/yourusername",
+  github: "https://github.com/Suerine",
+  linkedin: "https://www.linkedin.com/in/suerine-otieno-574417224/",
   instagram: "https://instagram.com/yourusername",
 };
 

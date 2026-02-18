@@ -51,7 +51,7 @@ export const skills = [
   {
     id: 8,
     name: "Redux",
-    icon: "Database",
+    icon: "Network",
     level: "Intermediate",
     experience: "1+ year",
   },
@@ -117,5 +117,12 @@ export const skills = [
     icon: "PenTool",
     level: "Intermediate",
     experience: "1+ year",
+  },
+  {
+    id: 18,
+    name: "Firebase",
+    icon: "Database",
+    level: "Proficient",
+    experience: "3+ year",
   },
 ];

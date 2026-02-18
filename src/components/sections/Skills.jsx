@@ -17,6 +17,7 @@ const Skills = () => {
    skills.find(s => s.name === 'Node.js'),
    skills.find(s => s.name === 'Express.js'),
    skills.find(s => s.name === 'MongoDB'),
+   skills.find(s => s.name === 'Firebase'),
    skills.find(s => s.name === 'REST API Design'),
    skills.find(s => s.name === 'OpenAI API'),
   ].filter(Boolean),

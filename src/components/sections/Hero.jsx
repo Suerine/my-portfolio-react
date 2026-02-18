@@ -86,13 +86,13 @@ const Hero = () => {
                <h2 className="font-normal text-l md:text-2xl">I build with:</h2>
              </div>
              <div ref={headingRef} className="container">
-               <h1 className="tagline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold" data-word="Perspective">
+               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Perspective">
                  Perspective
                </h1>
-               <h1 className="tagline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold" data-word="Creativity">
+               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Creativity">
                  Creativity
                </h1>
-               <h1 className="tagline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold" data-word="Innovation">
+               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Innovation">
                  Innovation
                </h1>
              </div>
@@ -100,7 +100,7 @@ const Hero = () => {
          </FadeIn>
 
          <FadeIn delay={200}>
-           <p className='text-base md:text-lg text-white/70 max-w-xl md:mt-0'>
+           <p className='text-base md:text-lg text-white/70 max-w-xl -mt-5 md:mt-0'>
              I design and build intelligent systems that simplify complexity, automate real work, and turn ambitious ideas into scalable digital products.
              From AI-powered workflows to full-stack applications, I blend engineering precision with creative thinking to build solutions that actually move businesses forward.
            </p>

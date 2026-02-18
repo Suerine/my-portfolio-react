@@ -6,7 +6,7 @@ import { scrollToSection } from '../../hooks/useScrollSpy'
 import FadeIn from '../animations/FadeIn'
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
 import { SiMongodb, SiJavascript, SiReact, SiPython } from 'react-icons/si'
-import MeCoding from "../../assets/images/me-coding-2.PNG"
+import MeCoding from "../../assets/images/me-coding-2.png"
 
 const Hero = () => {
   const headingRef = useRef(null)

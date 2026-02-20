@@ -7,10 +7,11 @@ import Projects from "../src/components/sections/Projects"
 import Services from '../src/components/sections/Services'
 import Testimonials from '../src/components/sections/Testimonials'
 import Contact from '../src/components/sections/Contact'
+import Footer from "../src/components/layout/Footer"
 
 const App = () => {
-  return (
-    <div className='min-h-screen bg-black pb-[100vh]'>
+  return ( 
+    <div className='min-h-screen bg-black '>
      <Navbar />
 
      <main>
@@ -22,6 +23,8 @@ const App = () => {
       {/* <Testimonials /> */}
       <Contact />
      </main>
+
+     <Footer />
     </div>
   )
 }

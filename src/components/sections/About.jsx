@@ -1,25 +1,27 @@
 import React, { useState} from 'react'
 import { Download, Code2, Sparkles } from 'lucide-react'
-import { SiReact, SiExpress, SiJavascript, SiPython, SiTypescript, SiNodedotjs, SiMongodb} from 'react-icons/si'
+import { SiReact, SiExpress, SiJavascript, SiPython, SiKotlin, SiNodedotjs, SiMongodb} from 'react-icons/si'
 import { PERSONAL_INFO, ABOUT_STATS } from '../../utils/constants'
 import FadeIn from '../animations/FadeIn'
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
+import LogoLoop from '../../ui/LogoLoop'
 
 const About = () => {
 
  // Skills
  const skills = [
-  { name: 'React.js', icon: SiReact, color: '#06B6D4'},
-  { name: 'Node.Js', icon: SiNodedotjs, color: '#339933'},
-  { name: 'MongoDB', icon: SiMongodb, color: '#47A248'},
-  { name: 'Express', icon: SiExpress, color: '#3178C6'},
-  { name: 'Javascript', icon: SiJavascript,      color: '#61DAFB'},
-  { name: 'Python', icon: SiPython, color: '#000000'},
+  { node: <SiReact />, icon: SiReact, color: '#06B6D4'},
+  { node: <SiNodedotjs />, icon: SiNodedotjs, color: '#339933'},
+  { node: <SiMongodb />, icon: SiMongodb, color: '#47A248'},
+  { node: <SiExpress />, icon: SiExpress, color: '#3178C6'},
+  { node: <SiJavascript />, icon: SiJavascript,      color: '#61DAFB'},
+  { node: <SiPython /> , icon: SiPython, color: '#000000'},
+  { node: <SiKotlin /> , icon: SiPython, color: '#000000'}
  ]
 
   return (
      <section id="about" className='relative py-16 sm:py-20 bg-black overflow-hidden'>
-    <RadialGradientBackground variant='about' />
+      <RadialGradientBackground variant='about' />
     
     <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
       
@@ -163,8 +165,8 @@ const About = () => {
                </div>
 
                <div>
-                 <div className='text-2xl font-bold text-primary mb-1'>24/7</div>
-                 <div className='text-xs text-white/60'>Support Available</div>
+                 <div className='text-2xl font-bold text-primary mb-1'>High</div>
+                 <div className='text-xs text-white/60'>Code Quality Standards</div>
                </div>
 
                <div>
@@ -191,22 +193,19 @@ const About = () => {
              </p>
            </div>
 
-           <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full max-w-4xl'>
-             {skills.map((skill) => (
-               <div
-                 key={skill.id}
-                 className='group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1'
-               >
-                 <skill.icon className='w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110' />
-
-                 <div className='text-sm text-white/80 font-medium text-center'>
-                   {skill.name}
-                 </div>
-
-                 {/* Glow */}
-                 <div className='absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 rounded-2xl transition-all duration-300 pointer-events-none'></div>
-               </div>
-             ))}
+           <div className="relative w-full" style={{ height: '200px', overflow: 'hidden'}}>
+              <LogoLoop
+               logos={skills}
+               speed={100}
+               direction="right"
+               logoHeight={60}
+               gap={60}
+               hoverSpeed={0}
+               scaleOnHover
+               fadeOut
+               fadeOutColor="black"
+               ariaLabel="Technology partners"
+             />
            </div>
          </div>
        </FadeIn>

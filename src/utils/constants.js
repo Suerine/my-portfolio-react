@@ -23,7 +23,7 @@ export const STATS = [
   { label: "Years Experience", value: "3+" },
   { label: "Projects Completed", value: "15+" },
   { label: "Technologies", value: "20+" },
-  { label: "Client Satisfaction", value: "100%" },
+  { label: "Project Delivery Rates", value: "100%" },
 ];
 
 export const ABOUT_STATS = [

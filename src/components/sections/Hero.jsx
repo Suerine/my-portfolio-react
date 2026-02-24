@@ -7,63 +7,72 @@ import FadeIn from '../animations/FadeIn'
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
 import { SiMongodb, SiJavascript, SiReact, SiPython } from 'react-icons/si'
 import MeCoding from "../../assets/images/me-coding-2.png"
+import DarkVeil from '../backgrounds/DarkVeil';
+
 
 const Hero = () => {
   const headingRef = useRef(null)
   
   useEffect(() => {
-  const headings = gsap.utils.toArray(
-    headingRef.current.querySelectorAll(".tagline")
-  )
+    const ctx = gsap.context(() => {
+      const headings = gsap.utils.toArray(
+        headingRef.current.querySelectorAll(".tagline")
+      )
 
-  gsap.set(headings, {
-    xPercent: 100,
-    "--t": "100%",
-  })
-
-  const tl = gsap.timeline({ repeat: -1 })
-
-  headings.forEach((heading) => {
-    tl
-      // slide in (gray)
-      .to(heading, {
-        xPercent: 0,
-        duration: 0.7,
-        ease: "power3.out",
-      })
-
-      // fill gray → white
-      .to(heading, {
-        "--t": "0%",
-        duration: 1,
-        ease: "expo.out"
-      })
-
-      // hold fully white
-      .to({}, { duration: 1 })
-
-      // slide out while still white
-      .to(heading, {
-        xPercent: -100,
-        duration: 0.7,
-        ease: "power3.in",
-      })
-
-      // reset for next cycle
-      .set(heading, {
+      gsap.set(headings, {
         xPercent: 100,
         "--t": "100%",
       })
-  })
 
-  return () => tl.kill()
- }, [])
+      const tl = gsap.timeline({ repeat: -1 })
+
+      headings.forEach((heading) => {
+        tl
+          .to(heading, {
+            xPercent: 0,
+            duration: 0.7,
+            ease: "power3.out",
+          })
+          .to(heading, {
+            "--t": "0%",
+            duration: 1,
+            ease: "expo.out"
+          })
+          .to({}, { duration: 1 })
+          .to(heading, {
+            xPercent: -100,
+            duration: 0.7,
+            ease: "power3.in",
+          })
+          .set(heading, {
+            xPercent: 100,
+            "--t": "100%",
+          })
+      })
+
+    }, headingRef)
+
+    return () => ctx.revert()
+  }, [])
+
 
 
 
   return (
    <section className='relative min-h-screen flex items-center overflow-hidden bg-black'>
-   <RadialGradientBackground variant="hero" />
+    <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+    <div className="w-full h-full">
+      <DarkVeil
+        hueShift={0}
+        noiseIntensity={0}
+        scanlineIntensity={0}
+        speed={0.6}
+        scanlineFrequency={0}
+        warpAmount={0}
+      />
+    </div>
+  </div>
+
 
    <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-20 w-full'>
      <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start lg:items-center min-h-[calc(100vh-4rem)] lg:min-h-0'>
@@ -85,17 +94,30 @@ const Hero = () => {
              <div className="">
                <h2 className="font-normal text-l md:text-2xl">I build with:</h2>
              </div>
-             <div ref={headingRef} className="container">
-               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Perspective">
-                 Perspective
-               </h1>
-               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Creativity">
-                 Creativity
-               </h1>
-               <h1 className="tagline text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold" data-word="Innovation">
-                 Innovation
-               </h1>
-             </div>
+             <div ref={headingRef} className="container relative flex flex-col gap-6">
+              <h1
+                className="tagline glass-text text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold"
+                data-word="Perspective"
+              >
+                Perspective
+              </h1>
+
+              <h1
+                className="tagline glass-text text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold"
+                data-word="Creativity"
+              >
+                Creativity
+              </h1>
+
+              <h1
+                className="tagline glass-text text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold"
+                data-word="Innovation"
+              >
+                Innovation
+              </h1>
+
+            </div>
+
            </div>
          </FadeIn>
 

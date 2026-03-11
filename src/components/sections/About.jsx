@@ -1,12 +1,13 @@
 import React, { useState} from 'react'
 import { Download, Code2, Sparkles } from 'lucide-react'
-import { SiReact, SiExpress, SiJavascript, SiPython, SiKotlin, SiNodedotjs, SiMongodb} from 'react-icons/si'
+import { SiReact, SiExpress, SiJavascript, SiPython, SiKotlin, SiNodedotjs, SiMongodb, SiLinux, SiGnubash, SiGithub, SiGit} from 'react-icons/si'
 import { PERSONAL_INFO, ABOUT_STATS } from '../../utils/constants'
 import FadeIn from '../animations/FadeIn'
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground'
 import LogoLoop from '../../ui/LogoLoop'
 
 const About = () => {
+ 
 
  // Skills
  const skills = [
@@ -16,7 +17,11 @@ const About = () => {
   { node: <SiExpress />, icon: SiExpress, color: '#3178C6'},
   { node: <SiJavascript />, icon: SiJavascript,      color: '#61DAFB'},
   { node: <SiPython /> , icon: SiPython, color: '#000000'},
-  { node: <SiKotlin /> , icon: SiPython, color: '#000000'}
+  { node: <SiGit /> , icon: SiGit, color: '#000000'},
+  { node: <SiKotlin /> , icon: SiKotlin, color: '#000000'},
+  { node: <SiLinux /> , icon: SiLinux, color: '#000000'},
+  { node: <SiGnubash /> , icon: SiGnubash, color: '#000000'},
+  { node: <SiGithub /> , icon: SiGithub, color: '#000000'},
  ]
 
   return (
@@ -161,7 +166,7 @@ const About = () => {
              <div className='grid grid-cols-3 gap-6 text-center'>
                <div>
                  <div className='text-2xl font-bold text-primary mb-1'>100%</div>
-                 <div className='text-xs text-white/60'>Client Satisfaction</div>
+                 <div className='text-xs text-white/60'>Security Focused</div>
                </div>
 
                <div>

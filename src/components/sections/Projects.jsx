@@ -56,12 +56,15 @@ const Projects = () => {
    scrollToIndex(newIndex);
   }
 
-  // Category iconse mapping
+  // Category icons mapping
   const categoryIcons = {
-   'All': Target, 
-   'Web Apps': Globe, 
-   'UI Components': Palette, 
-   'Full Stack': Zap,
+   All: Target,
+  "Full-Stack Web Application": Globe,
+  "Productivity Tool": Zap,
+  "Transport Tech": Sparkles,
+  "Finance Application": Briefcase,
+  "Web3 / FinTech": Sparkles,
+  "Mobile Development": Palette,
   };
 
   const visibleCards = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
@@ -92,34 +95,42 @@ const Projects = () => {
 
      {/* Category Filter */}
      <FadeIn delay={100}>
-      <div className="flex flex-wrap justify-center gap-3 mb-16">
-       {categories.map((category) => (
-        <button 
-          key={category}
-          onClick={() => handleCategoryChange(category)}
-          className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-            activeCategory === category 
-              ? 'text-white'
-              : 'text-white/60 hover:text-white'
-          }`}
-        >
-          <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
-            activeCategory === category
-              ? 'bg-primary/10 opacity-100'
-              : 'bg-white/5 border border-white/10 group-hover:bg-white/10'
-          }`} />
+      <div className="mb-16 flex justify-center">
+       <div className="flex gap-3 overflow-x-auto pb-2 px-4 max-w-full hide-scrollbar">
+         {categories.map((category) => {
+           const Icon = categoryIcons[category] || Target;
 
-          <div className='relative flex items-center gap-2'>
-            {React.createElement(categoryIcons[category], { className: 'w-4 h-4' })}
-            <span className='text-sm'>{category}</span>
-          </div>
+           return (
+             <button
+               key={category}
+               onClick={() => handleCategoryChange(category)}
+               className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 shrink-0 ${
+                 activeCategory === category
+                   ? "text-white"
+                   : "text-white/60 hover:text-white"
+               }`}
+             >
+               <div
+                 className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                   activeCategory === category
+                     ? "bg-primary/10 opacity-100"
+                     : "bg-white/5 border border-white/10 group-hover:bg-white/10"
+                 }`}
+               />
 
-          {activeCategory === category && (
-            <div className='absolute inset-0 rounded-full bg-primary blur-xl opacity-50 -z-10'/>
-          )}
-        </button>
-      ))}
-      </div>
+               <div className="relative flex items-center gap-2">
+                 <Icon className="w-4 h-4" />
+                 <span className="text-sm whitespace-nowrap">{category}</span>
+               </div>
+
+               {activeCategory === category && (
+                 <div className="absolute inset-0 rounded-full bg-primary blur-xl opacity-50 -z-10" />
+               )}
+             </button>
+           );
+         })}
+       </div>
+     </div>
      </FadeIn>
 
      {/* Projects Carousel */}

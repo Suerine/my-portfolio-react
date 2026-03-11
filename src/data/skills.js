@@ -17,7 +17,7 @@ export const skills = [
     id: 3,
     name: "JavaScript",
     icon: "FileCode",
-    level: "Advanced",
+    level: "Proficient",
     experience: "3+ years",
   },
   {
@@ -124,5 +124,26 @@ export const skills = [
     icon: "Database",
     level: "Proficient",
     experience: "3+ year",
+  },
+  {
+    id: 19,
+    name: "Linux",
+    icon: "Monitor",
+    level: "Proficient",
+    experience: "3+ year",
+  },
+  {
+    id: 20,
+    name: "Tailwind CSS",
+    icon: "ColorSwatch",
+    level: "Proficient",
+    experience: "2+ year",
+  },
+  {
+    id: 21,
+    name: "Odoo ERP",
+    icon: "Box",
+    level: "Beginner",
+    experience: "3+ months",
   },
 ];

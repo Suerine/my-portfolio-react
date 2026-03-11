@@ -2,6 +2,9 @@ import SpendWiseImg from "../assets/images/projects/SpendWisePCDemo1.png";
 import GoFImg from "../assets/images/projects/GOFPhoneDemo.png";
 import RapsyreImg from "../assets/images/projects/RapSyreDemo.png";
 import DeskflowImg from "../assets/images/projects/DeskflowPCDemo.png";
+// import FitlogImg from "../assets/images/projects/FitlogDemo.png";
+// import GiftJarImg from "../assets/images/projects/GiftJarDemo.png";
+// import MatatuImg from "../assets/images/projects/MatatuDemo.png";
 
 export const projects = [
   {
@@ -13,11 +16,9 @@ export const projects = [
     category: "Full-Stack Web Application",
     technologies: [
       "React",
-      "Tailwind CSS",
       "Node.js",
       "Express",
       "MongoDB Atlas",
-      "Mongoose",
       "JWT",
       "REST API",
     ],
@@ -47,6 +48,19 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Matatu Intelligence Engine",
+    description:
+      "A smart route reasoning engine that optimizes informal public transport navigation by suggesting the fastest matatu combinations between locations in Nairobi.",
+    image: "",
+    category: "Transport Tech",
+    technologies: ["Node.js", "Graph Algorithms", "MongoDB", "REST APIs"],
+    metrics:
+      "Implemented graph-based route reasoning to optimize matatu combinations across Nairobi transport networks.",
+    demoUrl: "",
+    github: "",
+  },
+  {
+    id: 4,
     title: "Personal Expense Tracker",
     description:
       "A full-stack expense tracking application that allows users to record transactions, categorize expenses, visualize spending patterns, and download financial reports for better budgeting decisions.",
@@ -62,32 +76,48 @@ export const projects = [
     metrics:
       "Reduced manual expense tracking time by 70% and generated real-time spending analytics with 95% data accuracy.",
     demoUrl: "",
-    githubUrl: "https://github.com/Suerine/ExpenseTracker",
+    github: "https://github.com/Suerine/ExpenseTracker",
   },
   {
-    id: 4,
-    title: "AI Email Assistant",
+    id: 5,
+    title: "GiftJar - Crypto Tipping Platform",
     description:
-      "An intelligent email automation system that summarizes long threads, prioritizes inbox messages by urgency and tone, auto-replies to support emails, and extracts invoice attachments automatically.",
-    image: RapsyreImg,
-    category: "AI Automation",
-    technologies: ["Node.js", "OpenAI API", "Gmail API", "MongoDB"],
-    metrics: "Reduced email handling time by 60%",
+      "A creator-support platform that enables fans to send cryptocurrency tips to their favorite creators. Users can generate a personalized tipping page where supporters contribute crypto donations securely, allowing creators to monetize their audience directly without traditional payment barriers.",
+    image: "",
+    category: "Web3 / FinTech",
+    technologies: ["React", "Node.js", "Blockchain API", "MongoDB"],
+    metrics:
+      "Enabled direct fan-to-creator crypto tipping through personalized donation pages.",
     demoUrl: "",
     github: "",
   },
   {
-    id: 5,
-    title: "Matatu Intelligence Engine",
+    id: 6,
+    title: "FitLog - Fitness Tracker",
     description:
-      "A smart route reasoning engine that optimizes informal public transport navigation by suggesting the fastest matatu combinations between locations in Nairobi.",
+      "A workout tracking application that allows users to log exercises, sets, reps, equipment, and weights while monitoring workout duration and progress. The app stores workout data locally and provides an intuitive interface for managing and reviewing fitness routines.",
     image: "",
-    category: "Transport Tech",
-    technologies: ["Node.js", "Graph Algorithms", "MongoDB", "REST APIs"],
-    metrics: "Improved route decision efficiency by 35%",
+    category: "Mobile Development",
+    technologies: [
+      "Java",
+      "Kotlin",
+      "Android Studio",
+      "SQLite",
+      "RecyclerView",
+    ],
+    metrics:
+      "Implemented structured workout logging with SQLite persistence and dynamic RecyclerView-based exercise lists.",
     demoUrl: "",
     github: "",
   },
 ];
 
-export const categories = ["All", "Web Apps", "UI Components", "Full Stack"];
+export const categories = [
+  "All",
+  "Full-Stack Web Application",
+  "Productivity Tool",
+  "Transport Tech",
+  "Finance Application",
+  "Web3 / FinTech",
+  "Mobile Development",
+];

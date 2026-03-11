@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
   location: "Nairobi, Kenya",
   tagline:
     "I build intelligent systems that automate work, optimize decisions, and scale digital products.",
-  resume: "/Suerine-Otieno.pdf",
+  resume: "/Suerine_Otieno_CV.pdf",
   bio: [
     "I am a full-stack developer specializing in AI-powered applications, automation systems, and scalable backend architectures.",
     "My work focuses on building intelligent tools that solve real-world problems — from AI email assistants and fintech platforms to productivity and workflow automation software.",
@@ -21,15 +21,15 @@ export const SOCIAL_LINKS = {
 
 export const STATS = [
   { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "15+" },
-  { label: "Technologies", value: "20+" },
+  { label: "Projects Completed", value: "19+" },
+  { label: "Technologies", value: "15+" },
   { label: "Project Delivery Rates", value: "100%" },
 ];
 
 export const ABOUT_STATS = [
   { label: "AI-Driven Systems Built", value: "5+" },
-  { label: "Automation Workflows Designed", value: "10+" },
-  { label: "Full-Stack Applications", value: "12+" },
+  { label: "Automation Workflows Designed", value: "7+" },
+  { label: "Full-Stack Applications", value: "10+" },
   { label: "APIs Integrated", value: "8+" },
 ];
 

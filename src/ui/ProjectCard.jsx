@@ -9,7 +9,7 @@ const ProjectCard = ({project}) => {
   technologies,
   metrics,
   demoUrl,
-  githubUrl
+  github
  } = project;
 
 
@@ -36,9 +36,9 @@ const ProjectCard = ({project}) => {
            </a>
          )}
 
-         {githubUrl && (
+         {github && (
            <a 
-             href={githubUrl}
+             href={github}
              target='_blank'
              rel="noopener noreferrer"
              className='p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-110'

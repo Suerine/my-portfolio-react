@@ -24,8 +24,8 @@ export const projects = [
     ],
     metrics:
       "Built secure authentication, optimized MongoDB schema design, and implemented searchable product catalog with cart and order workflow.",
-    demoUrl: "",
-    github: "",
+    demoUrl: "https://gof-ecommerce-website.vercel.app",
+    github: "https://github.com/Suerine/gof-ecommerce-website",
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const projects = [
     metrics:
       "Automated active and idle time tracking with real-time AFK detection, eliminating manual time logging and providing accurate task-level productivity analytics.",
     demoUrl: "",
-    github: "",
+    github: "https://github.com/Suerine/DeskFlow-An-Automation-Application",
   },
   {
     id: 3,
@@ -75,7 +75,7 @@ export const projects = [
     ],
     metrics:
       "Reduced manual expense tracking time by 70% and generated real-time spending analytics with 95% data accuracy.",
-    demoUrl: "",
+    demoUrl: "https://expense-tracker-pi-eosin-58.vercel.app/login",
     github: "https://github.com/Suerine/ExpenseTracker",
   },
   {
@@ -89,7 +89,7 @@ export const projects = [
     metrics:
       "Enabled direct fan-to-creator crypto tipping through personalized donation pages.",
     demoUrl: "",
-    github: "",
+    github: "https://github.com/Suerine/GiftJar",
   },
   {
     id: 6,
@@ -108,7 +108,7 @@ export const projects = [
     metrics:
       "Implemented structured workout logging with SQLite persistence and dynamic RecyclerView-based exercise lists.",
     demoUrl: "",
-    github: "",
+    github: "https://github.com/Suerine/FitLog",
   },
 ];
 

@@ -92,7 +92,7 @@ const Hero = () => {
          <FadeIn delay={100}>
            <div className="flex flex-col">
              <div className="">
-               <h2 className="font-normal text-l md:text-2xl">I build with:</h2>
+               <h2 className="font-normal text-l md:text-xl text-white/70">I build with:</h2>
              </div>
              <div ref={headingRef} className="container relative flex flex-col gap-6">
               <h1

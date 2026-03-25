@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap');
 
 @import "tailwindcss";
 
@@ -157,3 +158,211 @@
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
+
+.apple-nav {
+          font-family: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Pill container ── */
+        .nav-pill {
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: saturate(180%) blur(28px);
+          -webkit-backdrop-filter: saturate(180%) blur(28px);
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          border-radius: 980px;
+          box-shadow:
+            0 0 0 0.5px rgba(255,255,255,0.06) inset,
+            0 2px 24px rgba(0, 0, 0, 0.18),
+            0 1px 2px rgba(0, 0, 0, 0.12);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-pill.scrolled {
+          background: rgba(20, 20, 22, 0.72);
+          border-color: rgba(255, 255, 255, 0.10);
+          box-shadow:
+            0 0 0 0.5px rgba(255,255,255,0.05) inset,
+            0 4px 32px rgba(0, 0, 0, 0.30),
+            0 1px 3px rgba(0, 0, 0, 0.20);
+        }
+
+        /* ── Nav links ── */
+        .nav-link {
+          font-size: 13.5px;
+          font-weight: 400;
+          letter-spacing: -0.01em;
+          color: rgba(255, 255, 255, 0.65);
+          transition: color 0.2s ease;
+          position: relative;
+          padding: 6px 2px;
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 1.5px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 2px;
+          transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover {
+          color: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-link.active {
+          color: #fff;
+          font-weight: 500;
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
+        /* ── CTA Button ── */
+        .cta-btn {
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+          background: rgba(255, 255, 255, 0.95);
+          color: #1d1d1f;
+          border-radius: 980px;
+          padding: 7px 18px;
+          border: none;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.20), 0 0 0 0.5px rgba(255,255,255,0.4) inset;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+          background: #fff;
+          transform: scale(1.03);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 0 0 0.5px rgba(255,255,255,0.5) inset;
+        }
+
+        .cta-btn:active {
+          transform: scale(0.98);
+        }
+
+        /* ── Logo ── */
+        .logo-text {
+          font-size: 17px;
+          font-weight: 600;
+          letter-spacing: -0.03em;
+          background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.65) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* ── Mobile drawer ── */
+        .mobile-drawer {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          z-index: 40;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          pointer-events: none;
+        }
+
+        .mobile-drawer.open {
+          pointer-events: all;
+        }
+
+        .drawer-backdrop {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0);
+          backdrop-filter: blur(0px);
+          -webkit-backdrop-filter: blur(0px);
+          transition: background 0.35s ease, backdrop-filter 0.35s ease;
+        }
+
+        .mobile-drawer.open .drawer-backdrop {
+          background: rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+        }
+
+        .drawer-sheet {
+          position: relative;
+          z-index: 1;
+          background: rgba(18, 18, 20, 0.92);
+          backdrop-filter: saturate(200%) blur(40px);
+          -webkit-backdrop-filter: saturate(200%) blur(40px);
+          border-top: 1px solid rgba(255, 255, 255, 0.10);
+          border-radius: 24px 24px 0 0;
+          padding: 12px 24px 40px;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+          box-shadow: 0 -8px 48px rgba(0,0,0,0.4);
+        }
+
+        .mobile-drawer.open .drawer-sheet {
+          transform: translateY(0);
+        }
+
+        .drawer-handle {
+          width: 36px;
+          height: 4px;
+          background: rgba(255,255,255,0.20);
+          border-radius: 2px;
+          margin: 8px auto 20px;
+        }
+
+        .mobile-nav-link {
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 14px 12px;
+          font-size: 17px;
+          font-weight: 400;
+          letter-spacing: -0.02em;
+          color: rgba(255,255,255,0.65);
+          border-radius: 12px;
+          transition: all 0.18s ease;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .mobile-nav-link:last-of-type {
+          border-bottom: none;
+        }
+
+        .mobile-nav-link.active {
+          color: #fff;
+          font-weight: 500;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link:active {
+          color: #fff;
+          background: rgba(255,255,255,0.06);
+        }
+
+        /* ── Menu icon button ── */
+        .icon-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.10);
+          border: 1px solid rgba(255,255,255,0.12);
+          color: rgba(255,255,255,0.85);
+          transition: all 0.2s ease;
+          cursor: pointer;
+        }
+
+        .icon-btn:hover {
+          background: rgba(255,255,255,0.16);
+          color: #fff;
+        }

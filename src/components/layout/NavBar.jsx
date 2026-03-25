@@ -7,31 +7,17 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const activeSection = useScrollSpy(
-    NAV_LINKS.map((link) => link.id)
-  );
+  const activeSection = useScrollSpy(NAV_LINKS.map((link) => link.id));
 
-  // Handle background change on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    return () => { document.body.style.overflow = "auto"; };
   }, [isMenuOpen]);
 
   const handleNavClick = (sectionId) => {
@@ -40,106 +26,90 @@ const NavBar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 w-full py-4 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/30 backdrop-blur-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-[1320px] mx-auto px-5">
-        <div className="flex items-center justify-between">
-          
-          {/* Logo */}
-          <div className="flex items-center gap-4">
-            <Code className="w-6 h-6 text-primary" />
-
-            <button
-              onClick={() =>
-                window.scrollTo({ top: 0, behavior: "smooth" })
-              }
-              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-              aria-label="home"
-            >
-              {PERSONAL_INFO.name.split(" ")[0]}
-            </button>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-7">
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNavClick(link.id)}
-                className={`text-base font-medium transition-all duration-300 ${
-                  activeSection === link.id
-                    ? "text-white"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
-            <button
-              onClick={() => handleNavClick("contact")}
-              className="px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white hover:bg-white/90 transition-all duration-300"
-            >
-              Hire Me
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 text-white hover:text-white/80 transition-colors"
-            aria-label="menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen
-            ? "max-h-[500px] opacity-100"
-            : "max-h-0 opacity-0"
-        }`}
+    <>
+      {/* ── Desktop / Pill Nav ── */}
+      <nav
+        className="apple-nav fixed top-0 left-0 right-0 z-50 w-full"
+        style={{ paddingTop: '14px' }}
       >
-        <div className="bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-6 space-y-2">
+        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
+
+          {/* Pill */}
+          <div className={`nav-pill ${isScrolled ? 'scrolled' : ''}`}
+               style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 18px' }}>
+
+            {/* Logo */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+              <Code style={{ width: '15px', height: '15px', color: 'rgba(255,255,255,0.7)' }} />
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="logo-text"
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                aria-label="home"
+              >
+                {PERSONAL_INFO.name.split(' ')[0]}
+              </button>
+            </div>
+
+            {/* Desktop links */}
+            <div className="hidden md:flex" style={{ alignItems: 'center', gap: '28px' }}>
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link.id)}
+                  className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px 2px' }}
+                >
+                  {link.label}
+                </button>
+              ))}
+               <button className="cta-btn" onClick={() => handleNavClick('contact')}>
+                 Hire Me
+               </button>
+            </div>
+
+            
+            {/* Mobile menu toggle */}
+            <button
+              className="md:hidden icon-btn"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="menu"
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen
+                ? <X style={{ width: '14px', height: '14px' }} />
+                : <Menu style={{ width: '14px', height: '14px' }} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Mobile Bottom Sheet ── */}
+      <div className={`mobile-drawer md:hidden ${isMenuOpen ? 'open' : ''}`}>
+        <div className="drawer-backdrop" onClick={() => setIsMenuOpen(false)} />
+        <div className="drawer-sheet apple-nav">
+          <div className="drawer-handle" />
+
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeSection === link.id
-                  ? "text-white bg-white/10"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
-              }`}
+              className={`mobile-nav-link ${activeSection === link.id ? 'active' : ''}`}
             >
               {link.label}
             </button>
           ))}
 
           <button
-            onClick={() => handleNavClick("contact")}
-            className="w-full px-7 py-3.5 bg-white text-[#212121] font-medium text-base rounded-[17px] border border-white mt-2 hover:bg-primary hover:text-black transition-all duration-300"
+            className="cta-btn"
+            onClick={() => handleNavClick('contact')}
+            style={{ width: '100%', marginTop: '16px', padding: '14px', fontSize: '15px', borderRadius: '14px' }}
           >
             Hire Me
           </button>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react'
 import {skills} from '../../data/skills'
 import * as Icons from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
+import LiquidEther from '../../components/LiquidEther';
 
 const Skills = () => {
 
@@ -57,8 +58,28 @@ const Skills = () => {
      {/* Animated Background Gradients */}
 
      <div className='absolute inset-0 overflow-hidden'>
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50"/>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50"/>
+      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+       <LiquidEther
+         colors={[ '#57e95e', '#3c01a5', '#544990' ]}
+         mouseForce={20}
+         cursorSize={100}
+         isViscous
+         viscous={30}
+         iterationsViscous={32}
+         iterationsPoisson={32}
+         resolution={0.5}
+         isBounce={false}
+         autoDemo
+         autoSpeed={0.5}
+         autoIntensity={2.2}
+         takeoverDuration={0.25}
+         autoResumeDelay={3000}
+         autoRampDuration={0.6}
+         color0="#3c01a5"
+         color1="#2ff44a"
+         color2="#544990"
+     />
+     </div>
      </div>
 
      <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -68,7 +89,7 @@ const Skills = () => {
           <Icons.Sparkles className='w-4 h-4 text-primary' />
           <span className="text-sm text-primary font-medium">My Expertise</span>
          </div>
-         <h2 className='text-4xl lg:text-5xl font-normal text-white mb-4'>
+         <h2 className='text-4xl lg:text-5xl font-display text-white mb-4'>
           Skills & Technologies
          </h2>
         <p className='text-lg text-white/60 max-w-2xl mx-auto'>

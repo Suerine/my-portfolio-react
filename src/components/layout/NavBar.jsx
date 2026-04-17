@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Code, Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../../utils/constants";
 import { useScrollSpy, scrollToSection } from "../../hooks/useScrollSpy";
+import SueLogo from "../../assets/images/SueLogo.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,15 +41,7 @@ const NavBar = () => {
 
             {/* Logo */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-              <Code style={{ width: '15px', height: '15px', color: 'rgba(255,255,255,0.7)' }} />
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="logo-text"
-                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                aria-label="home"
-              >
-                {PERSONAL_INFO.name.split(' ')[0]}
-              </button>
+              <img src={SueLogo} alt="Sue Logo" className="w-12 h-12 object-contain" />
             </div>
 
             {/* Desktop links */}

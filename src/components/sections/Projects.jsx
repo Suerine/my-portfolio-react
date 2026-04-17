@@ -84,7 +84,7 @@ const Projects = () => {
            <Briefcase className='w-4 h-4 text-primary'/>
            <span className='text-sm text-primary font-medium'>My work</span>
         </div>
-        <h2 className='text-4xl lg:text-5xl font-normal text-white mb-4'>
+        <h2 className='text-4xl lg:text-5xl font-display text-white mb-4'>
          Featured Projects
         </h2>
         <p className='text-lg text-white/60 max-w-2xl mx-auto'>

@@ -49,7 +49,7 @@ const About = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight'>
+              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-display text-white leading-tight'>
                 Crafting Digital Experiences That Matter
               </h2>
             </FadeIn>
